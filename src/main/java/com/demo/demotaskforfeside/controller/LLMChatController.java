@@ -21,7 +21,7 @@ public class LLMChatController {
     public String aiChatPageNew(Model model) {
         model.addAttribute("systemMessage", MOCKED_SYSTEM_MESSAGE);
 
-        return "/pages/ai-chat-page/ai-chat-page";
+        return "/pages/llm-product-search-page/llm-product-search-page";
     }
 
     // API used to ask LLM questions and get a response
