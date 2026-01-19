@@ -1,5 +1,5 @@
 <div
-  th:fragment="ai-chat"
+  th:fragment="llm-chat"
   th:with="appVersion=${@environment.getProperty('app.version')}"
   class="ai-chat"
   id="ai-chat-content-fragment"
@@ -8,7 +8,7 @@
   <!-- Styles -->
   <link
     rel="stylesheet"
-    th:href="@{/fragments/ai-chat/ai-chat.css(v=${appVersion})}"
+    th:href="@{/fragments/llm-chat/llm-chat.css(v=${appVersion})}"
   />
 
   <h2 class="heading--underlined">AI-пошук товарів</h2>
@@ -101,7 +101,8 @@
   </form>
 
   <!-- Scripts -->
+
   <script
-    th:src="@{/fragments/ai-chat/ai-chat-ui.js(v=${appVersion})}"
+    th:src="@{/fragments/llm-chat/llm-chat-ui.js(v=${appVersion})}"
   ></script>
 </div>
