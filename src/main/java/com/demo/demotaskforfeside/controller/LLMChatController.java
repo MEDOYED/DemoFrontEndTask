@@ -5,12 +5,13 @@ import com.demo.demotaskforfeside.dto.LLMChatResponse;
 import com.demo.demotaskforfeside.dto.ProductDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
-@RestController
+@Controller
 public class LLMChatController {
     private static final String MOCKED_SYSTEM_MESSAGE = "Опишіть товари який вам потрібний або набір " +
             "товарів який потрібно порівняти";
