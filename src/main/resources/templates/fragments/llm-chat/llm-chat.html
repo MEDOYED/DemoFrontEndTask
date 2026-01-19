@@ -1,5 +1,5 @@
 <div
-  th:fragment="llm-chat"
+  th:fragment="llm-chat(systemMessage, title)"
   th:with="appVersion=${@environment.getProperty('app.version')}"
   class="ai-chat"
   id="ai-chat-content-fragment"
@@ -11,10 +11,13 @@
     th:href="@{/fragments/llm-chat/llm-chat.css(v=${appVersion})}"
   />
 
-  <h2 class="heading--underlined">AI-пошук товарів</h2>
+  <h2
+    class="heading--underlined"
+    th:text="${title}"
+  ></h2>
 
   <!-- description section -->
-  <section class="ai-chat__description-block">
+  <!-- <section class="ai-chat__description-block">
     <p>
       Опишіть, які потрібні вам товари, і AI запропонує
       найрелевантніші позиції з каталогу.
@@ -33,7 +36,7 @@
         <p>Отримайте пояснення, чому товари підібрано саме так</p>
       </li>
     </ul>
-  </section>
+  </section> -->
 
   <section class="ai-chat__chat">
     <!-- AI first message  -->
@@ -54,13 +57,13 @@
     </div>
 
     <!-- AI message from controller -->
-    <div class="card ai-chat__assistant-message">
+    <!-- <div class="card ai-chat__assistant-message">
       <div class="ai-chat__label">AI консультант</div>
       <p
         class="ai-chat__text-message"
-        th:text="${mockedResponse}"
+        th:text="${systemMessage}"
       ></p>
-    </div>
+    </div> -->
   </section>
 
   <!-- search backdrop blur -->

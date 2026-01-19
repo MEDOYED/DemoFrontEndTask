@@ -13,7 +13,7 @@ import java.util.List;
 @Slf4j
 @Controller
 public class LLMChatController {
-    private static final String MOCKED_SYSTEM_MESSAGE = "Опишіть товари який вам потрібний або набір " +
+    private static final String MOCKED_SYSTEM_MESSAGE = "Опишіть товар який вам потрібний або набір " +
             "товарів який потрібно порівняти";
 
     // API used to render the initial LLM chat page

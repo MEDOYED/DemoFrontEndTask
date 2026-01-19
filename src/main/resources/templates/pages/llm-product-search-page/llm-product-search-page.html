@@ -25,7 +25,7 @@
     >
       <div class="responsive__content-wrapper">
         <div
-          th:replace="~{/fragments/llm-chat/llm-chat.html :: llm-chat}"
+          th:replace="~{/fragments/llm-chat/llm-chat.html :: llm-chat(systemMessage=${systemMessage}, title='Розумний пошук товарів​') }"
         ></div>
       </div>
     </div>
