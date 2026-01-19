@@ -75,3 +75,9 @@
     display: none;
   }
 }
+
+/* classes from anothers files (parents-files */
+
+.responsive__content-wrapper {
+  width: 100%;
+}

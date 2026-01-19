@@ -21,8 +21,14 @@
   </head>
   <body>
     <div
-      th:replace="~{/fragments/responsive-layout/responsive-layout :: responsive-layout(content=~{/fragments/llm-chat/llm-chat :: llm-chat}, activePage='ai-chat-page')}"
-    ></div>
+      th:replace="~{/fragments/responsive-layout/responsive-layout :: responsive-layout(content=~{::.responsive__content-wrapper} , activePage='ai-chat-page')}"
+    >
+      <div class="responsive__content-wrapper">
+        <div
+          th:replace="~{/fragments/llm-chat/llm-chat.html :: llm-chat}"
+        ></div>
+      </div>
+    </div>
 
     <script th:src="@{/js/app.js(v=${appVersion})}"></script>
   </body>
