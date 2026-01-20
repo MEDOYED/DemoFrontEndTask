@@ -19,27 +19,21 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   const updateSearchWidth = () => {
     const widthAiChatContent = aiChatContent.offsetWidth;
-    console.log("widthAiChatContent: " + widthAiChatContent);
+
     const rect = aiChatContent.getBoundingClientRect();
 
     searchBackdropBlur.style.width = `${widthAiChatContent}px`;
 
-    if (window.innerWidth < 1200) {
-      searchBackdropBlur.style.left = `${rect.left}px`;
-    } else {
-      searchBackdropBlur.style.left = `400px`; // distance from left border screen to searchBackdropBlur.
-    }
+    searchBackdropBlur.style.left = `${rect.left}px`;
 
     searchInput.style.width = `${widthAiChatContent}px`;
   };
 
   updateSearchWidth();
 
-  const resizeObserver = new ResizeObserver(() => {
+  window.addEventListener("resize", () => {
     updateSearchWidth();
   });
-
-  resizeObserver.observe(aiChatContent);
 
   window.addEventListener("beforeunload", () => {
     resizeObserver.disconnect();
