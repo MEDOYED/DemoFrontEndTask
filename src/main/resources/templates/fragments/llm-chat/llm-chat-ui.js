@@ -19,13 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   const updateSearchWidth = () => {
     const widthAiChatContent = aiChatContent.offsetWidth;
+    console.log("widthAiChatContent: " + widthAiChatContent);
     const rect = aiChatContent.getBoundingClientRect();
 
     searchBackdropBlur.style.width = `${widthAiChatContent}px`;
-    searchBackdropBlur.style.left = `${rect.left}px`;
 
-    const widthSearchInput = widthAiChatContent - 20;
-    searchInput.style.width = `${widthSearchInput}px`;
+    if (window.innerWidth < 1200) {
+      searchBackdropBlur.style.left = `${rect.left}px`;
+    } else {
+      searchBackdropBlur.style.left = `400px`; // distance from left border screen to searchBackdropBlur.
+    }
+
+    searchInput.style.width = `${widthAiChatContent}px`;
   };
 
   updateSearchWidth();
