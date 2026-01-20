@@ -1,3 +1,9 @@
+import {
+  fetchAIResponse,
+  addAIResponse,
+} from "/fragments/llm-chat/llm-chat-api.js";
+// import { fetchAIResponse, addAIResponse } from "./llm-chat-api";
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("llm-chat.js loaded!");
 
@@ -73,5 +79,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Очищаємо input
     messageInput.value = "";
+
+    // todo переписати з використанням async/await
+    // Відправляємо запит на бекенд і отримуємо відповідь AI
+    console.log("🔄 Відправка на бекенд...");
+
+    // Використовуємо async/await для роботи з Promise
+    fetchAIResponse(userMessage)
+      .then(html => {
+        // Отримали HTML від бекенду - додаємо в чат
+        addAIResponse(chatSection, html);
+        console.log("✅ Відповідь AI успішно додано!");
+      })
+      .catch(error => {
+        console.error("❌ Помилка:", error);
+      });
   });
 });

@@ -31,9 +31,26 @@ public class LLMChatController {
 
         return createDummyLLMChatResponse();
     }
+    
+    // API для отримання HTML фрагменту з відповіддю AI
+     @PostMapping(value = "/llm/chat/ask-html")
+     public String chatHtml(@RequestBody LLMChatQuestionRequest request, Model model) {
+         log.info("Отримано запит на /llm/chat/ask-html: {}", request.question());
+
+         // Отримуємо відповідь (зараз мок, потім буде AI)
+         LLMChatResponse response = createDummyLLMChatResponse();
+
+         // Додаємо дані в модель для Thymeleaf
+         model.addAttribute("knowledgeSource", response.knowledgeSource());
+         model.addAttribute("answers", response.answers());
+         model.addAttribute("products", response.products());
+
+         // Повертаємо тільки HTML фрагмент (не всю сторінку!)
+         return "fragments/llm-chat/llm-response-fragment :: aiResponse";
+     }
 
     private LLMChatResponse createDummyLLMChatResponse() {
-        List<String> knowlageSource = List.of(
+        List<String> knowledgeSource = List.of(
                 "mocked_llm_response",
                 "product_catalog",
                 "internal_demo_data"
@@ -78,7 +95,7 @@ public class LLMChatController {
         );
 
         return new LLMChatResponse(
-                knowlageSource,
+                knowledgeSource,
                 answers,
                 products
         );

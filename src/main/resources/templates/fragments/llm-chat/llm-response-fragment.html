@@ -1,0 +1,51 @@
+<div
+  th:fragment="aiResponse(knowledgeSource, answers, products)"
+  class="card ai-chat__assistant-message"
+>
+  <div class="ai-chat__label">LLM консультант</div>
+
+  <!-- knowledgeSource (джерела знань) показуємо тільки якщо є -->
+  <div
+    th:if="${knowledgeSource != null and !knowledgeSource.isEmpty()}"
+    class="ai-chat__knowledge-source-block"
+  >
+    <p>Джерела:</p>
+
+    <ul>
+      <li
+        th:each="source : ${knowledgeSource}"
+        th:text="${source}"
+      ></li>
+    </ul>
+  </div>
+
+  <!-- Відповіді AI (завжди виводимо), але перевірка всерівно є -->
+  <div
+    th:if="${answers != null  and !answers.isEmpty()}"
+    class="ai-chat__answers-block"
+  >
+    <div th:each="answer : ${answers}">
+      <p
+        class="ai-chat__text-message"
+        th:text="${answer}"
+      ></p>
+    </div>
+  </div>
+
+  <!-- Товари (показуємо якщо є) -->
+  <div
+    th:if="${products != null and !products.isEmpty()}"
+    class="ai-chat__products-block"
+  >
+    <h4>Знайдені товари:</h4>
+    <ul>
+      <li th:each="product : ${products}">
+        <strong th:text="${product.productName}"></strong>
+        <br />
+        <span th:text="${product.productDescription}"></span>
+        <br />
+        <em th:text="'Артикул: ' + ${product.productSku}"></em>
+      </li>
+    </ul>
+  </div>
+</div>
