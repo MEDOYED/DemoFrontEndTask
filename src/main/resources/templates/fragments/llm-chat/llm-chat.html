@@ -1,7 +1,7 @@
 <div
   th:fragment="llm-chat(systemMessage, title)"
   th:with="appVersion=${@environment.getProperty('app.version')}"
-  class="ai-chat"
+  class="llm-chat"
   id="ai-chat-content-fragment"
 >
   <!-- Styles -->
@@ -15,65 +15,28 @@
     th:text="${title}"
   ></h2>
 
-  <!-- description section -->
-  <!-- <section class="ai-chat__description-block">
-    <p>
-      Опишіть, які потрібні вам товари, і AI запропонує
-      найрелевантніші позиції з каталогу.
-    </p>
-
-    <ul class="ai-chat__desc-list">
-      <li class="ai-chat__desc-list-item">
-        <p>Формулюйте запит природною мовою</p>
-      </li>
-      <li class="ai-chat__desc-list-item">
-        <p>
-          Уточнюйте потрібні характеристики або сферу застосування
-        </p>
-      </li>
-      <li class="ai-chat__desc-list-item">
-        <p>Отримайте пояснення, чому товари підібрано саме так</p>
-      </li>
-    </ul>
-  </section> -->
-
   <section
-    class="ai-chat__chat"
+    class="llm-chat__chat-section"
     id="chat-section"
   >
     <!-- AI first message  -->
-    <div class="card ai-chat__assistant-message">
-      <div class="ai-chat__label">LLM консультант</div>
+    <div class="card llm-chat__assistant-message">
+      <div class="llm-chat__label">LLM консультант</div>
       <p
-        class="ai-chat__text-message"
+        class="llm-chat__text-message"
         th:text="${systemMessage}"
       ></p>
     </div>
 
-    <!-- user message -->
-    <!-- <div class="card ai-chat__user-message">
-      <div class="ai-chat__label">Ім'я Користувача</div>
-      <p class="ai-chat__text-message">
-        Я хочу купити хрестову викрутку у Львові
-      </p>
-    </div> -->
-
-    <!-- AI message from controller -->
-    <!-- <div class="card ai-chat__assistant-message">
-      <div class="ai-chat__label">AI консультант</div>
-      <p
-        class="ai-chat__text-message"
-        th:text="${systemMessage}"
-      ></p>
-    </div> -->
+    <!-- тут вставляється <template> </template> з повідомленням користувача -->
   </section>
 
   <!-- шаблон повідомлення від користувача який тут не рендериться, але його вставляє в секцію чату -->
   <template id="user-message-template">
-    <div class="card ai-chat__user-message">
-      <div class="ai-chat__label">Ім'я Користувача</div>
+    <div class="card llm-chat__user-message">
+      <div class="llm-chat__label">Ім'я Користувача</div>
       <p
-        class="ai-chat__text-message"
+        class="llm-chat__text-message"
         id="user-message-paragraph"
       ></p>
     </div>
@@ -81,27 +44,26 @@
 
   <!-- search backdrop blur -->
   <div
-    class="ai-chat__search-backdrop-blur"
+    class="llm-chat__search-backdrop-blur"
     data-js-search-backdrop-blur
   ></div>
 
   <!-- search bar -->
   <form
-    class="ai-chat__search-bar"
-    action=""
+    class="llm-chat__search-bar"
     id="chat-message-form"
   >
     <input
       id="message-input"
       name="message-input"
-      class="input ai-chat__search-input"
+      class="input llm-chat__search-input"
       data-js-search-input
       type="search"
       placeholder="Опишіть потрібні товари..."
     />
 
     <button
-      class="ai-chat__search-button"
+      class="llm-chat__search-button"
       type="submit"
     >
       <svg
