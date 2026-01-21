@@ -192,6 +192,11 @@ body.telegram-app-blur-header::before {
   box-shadow: var(--shadow);
 }
 
+.card-label {
+  font-size: 13px;
+  color: var(--brand-muted);
+}
+
 .heading--underlined {
   font-size: 18px;
   font-weight: 900;

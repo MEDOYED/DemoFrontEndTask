@@ -97,3 +97,41 @@
   padding: 5px;
   display: flex;
 }
+
+/* ===== llm-response-fragment.html  --- start  ===== */
+/* ===== llm-response-fragment.html  --- start  ===== */
+/* ===== llm-response-fragment.html  --- start  ===== */
+.llm-chat__knowledge-source-block {
+  font-style: italic;
+  width: fit-content;
+}
+
+.llm-chat__response-label {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.llm-chat__response-icon {
+  width: 20px;
+}
+
+.llm-chat__answers-block {
+  width: fit-content;
+}
+
+.llm-chat__products-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.llm-chat__products-block__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+/* ===== llm-response-fragment.html  --- end  ===== */
+/* ===== llm-response-fragment.html  --- end  ===== */
+/* ===== llm-response-fragment.html  --- end  ===== */

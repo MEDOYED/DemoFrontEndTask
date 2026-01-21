@@ -1,15 +1,22 @@
 <div
   th:fragment="aiResponse(knowledgeSource, answers, products)"
-  class="card ai-chat__assistant-message"
+  class="card llm-chat__assistant-message"
 >
-  <div class="ai-chat__label">LLM консультант</div>
+  <div class="llm-chat__label">LLM консультант</div>
 
   <!-- knowledgeSource (джерела знань) показуємо тільки якщо є -->
   <div
     th:if="${knowledgeSource != null and !knowledgeSource.isEmpty()}"
-    class="ai-chat__knowledge-source-block"
+    class="card llm-chat__knowledge-source-block"
   >
-    <p>Джерела:</p>
+    <p class="card-label llm-chat__response-label">
+      <img
+        class="llm-chat__response-icon"
+        src="/images/svg-icons/resource.svg"
+        alt="іконка ресурсів яка показує що різні ресурси збираються в одну відповідь"
+      />
+      Джерела:
+    </p>
 
     <ul>
       <li
@@ -22,7 +29,7 @@
   <!-- Відповіді AI (завжди виводимо), але перевірка всерівно є -->
   <div
     th:if="${answers != null  and !answers.isEmpty()}"
-    class="ai-chat__answers-block"
+    class="card llm-chat__answers-block"
   >
     <div th:each="answer : ${answers}">
       <p
@@ -35,11 +42,14 @@
   <!-- Товари (показуємо якщо є) -->
   <div
     th:if="${products != null and !products.isEmpty()}"
-    class="ai-chat__products-block"
+    class="card llm-chat__products-block"
   >
-    <h4>Знайдені товари:</h4>
-    <ul>
-      <li th:each="product : ${products}">
+    <h4 class="card-label">Знайдені товари:</h4>
+    <ul class="llm-chat__products-block__list">
+      <li
+        class="card"
+        th:each="product : ${products}"
+      >
         <strong th:text="${product.productName}"></strong>
         <br />
         <span th:text="${product.productDescription}"></span>
