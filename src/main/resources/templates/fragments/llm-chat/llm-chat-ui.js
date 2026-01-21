@@ -32,8 +32,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     updateSearchWidth();
   });
-
-  window.addEventListener("beforeunload", () => {
-    resizeObserver.disconnect();
-  });
 });
