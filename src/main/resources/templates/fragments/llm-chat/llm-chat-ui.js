@@ -2,12 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const aiChatContent = document.getElementById(
     "ai-chat-content-fragment",
   );
-  const searchBackdropBlur = aiChatContent?.querySelector(
-    "[data-js-search-backdrop-blur]",
+  const searchBackdropBlur = document.getElementById(
+    "search-backdrop-blur",
   );
-  const searchInput = aiChatContent?.querySelector(
-    "[data-js-search-input]",
-  );
+  const searchInput = document.getElementById("message-input");
 
   if (!aiChatContent || !searchBackdropBlur || !searchInput) {
     return;
