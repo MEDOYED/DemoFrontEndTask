@@ -64,31 +64,31 @@ public class LLMChatController {
         List<ProductDto> products = List.of(
                 new ProductDto(
                         "Драбина APRO алюмінієва приставна 7 сходинок",
-                        "https://example.com/images/apro-7.png",
+                        "https://plus.unsplash.com/premium_photo-1711036292383-dd2c17c6fcd6?fm=jpg&q=80&w=800",
                         "Алюмінієва приставна драбина. Висота 1,95 м, вага 2,9 кг, максимальне навантаження 150 кг.",
                         "552000"
                 ),
                 new ProductDto(
                         "Драбина алюмінієва DETEX шарнірна 2х10",
-                        "https://example.com/images/detex-2x10.png",
+                        "https://images.unsplash.com/photo-1658669742598-2f70354c3326?fm=jpg&q=80&w=800",
                         "Багатофункціональна шарнірна драбина з 8 варіантами трансформації. Максимальне навантаження 150 кг.",
                         "DLH-2s10"
                 ),
                 new ProductDto(
                         "Драбина розкладна 3-секційна 3x12",
-                        "https://example.com/images/3x12.png",
+                        "https://images.pexels.com/photos/10623056/pexels-photo-10623056.jpeg?auto=compress&cs=tinysrgb&w=800",
                         "3-секційна драбина довжиною до 8,5 м, вага 16,2 кг. Підходить для професійних робіт.",
                         "05-01-0071"
                 ),
                 new ProductDto(
                         "Драбина металева MAX 4-х сходинкова",
-                        "https://example.com/images/max-4.png",
+                        "https://images.pexels.com/photos/10211688/pexels-photo-10211688.jpeg?auto=compress&cs=tinysrgb&w=800",
                         "Побутова металева драбина з широкими антиковзкими сходинками. Висота 127 см.",
                         "2104"
                 ),
                 new ProductDto(
                         "Драбина трансформер 4x4 (4,31 м)",
-                        "https://example.com/images/transformer-4x4.png",
+                        "https://images.pexels.com/photos/10211688/pexels-photo-10211688.jpeg?auto=compress&cs=tinysrgb&w=800",
                         "Алюмінієва драбина-трансформер для будівельних, монтажних та побутових робіт.",
                         "EN131"
                 )

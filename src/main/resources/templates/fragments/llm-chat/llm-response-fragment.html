@@ -18,8 +18,9 @@
       Джерела:
     </p>
 
-    <ul>
+    <ul class="list">
       <li
+        class="list__item"
         th:each="source : ${knowledgeSource}"
         th:text="${source}"
       ></li>
@@ -42,18 +43,24 @@
   <!-- Товари (показуємо якщо є) -->
   <div
     th:if="${products != null and !products.isEmpty()}"
-    class="card llm-chat__products-block"
+    class="llm-chat__products-block"
   >
     <h4 class="card-label">Знайдені товари:</h4>
-    <ul class="llm-chat__products-block__list">
+    <ul class="list">
       <li
-        class="card"
+        class="card list__item"
         th:each="product : ${products}"
       >
         <strong th:text="${product.productName}"></strong>
-        <br />
+
+        <img
+          class="image"
+          th:src="${product.productImageLink}"
+          alt=""
+        />
+
         <span th:text="${product.productDescription}"></span>
-        <br />
+
         <em th:text="'Артикул: ' + ${product.productSku}"></em>
       </li>
     </ul>
