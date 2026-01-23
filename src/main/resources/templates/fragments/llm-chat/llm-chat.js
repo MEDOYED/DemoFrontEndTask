@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const messageInput = document.getElementById("message-input");
   const chatSection = document.getElementById("chat-section");
+  const clearSearchInputButton = document.getElementById(
+    "clear-search-input-button",
+  );
 
   if (!chatMessageForm) {
     console.log("Форма для відправки повідомлень не знайдена");
@@ -93,5 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(error => {
         console.error("Помилка:", error);
       });
+  });
+
+  clearSearchInputButton.addEventListener("click", () => {
+    messageInput.value = "";
   });
 });
