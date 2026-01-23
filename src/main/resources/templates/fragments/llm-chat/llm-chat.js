@@ -1,6 +1,6 @@
 import {
-  fetchAIResponse,
-  addAIResponse,
+  fetchLLMResponse,
+  addLLMResponse,
 } from "/fragments/llm-chat/llm-chat-api.js";
 // import { fetchAIResponse, addAIResponse } from "./llm-chat-api";
 
@@ -85,10 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("🔄 Відправка на бекенд...");
 
     // Використовуємо async/await для роботи з Promise
-    fetchAIResponse(userMessage)
+    fetchLLMResponse(userMessage)
       .then(html => {
         // Отримали HTML від бекенду - додаємо в чат
-        addAIResponse(chatSection, html);
+        addLLMResponse(chatSection, html);
         console.log("✅ Відповідь AI успішно додано!");
       })
       .catch(error => {

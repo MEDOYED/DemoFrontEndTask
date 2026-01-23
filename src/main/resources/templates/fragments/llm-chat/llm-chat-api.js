@@ -5,7 +5,7 @@
  * @param {string} question - Текст запитання користувача
  * @returns {Promise<string>} - HTML фрагмент з відповіддю LLM
  */
-export async function fetchAIResponse(question) {
+export async function fetchLLMResponse(question) {
   console.log("📤 Відправка запиту на бекенд:", question);
 
   try {
@@ -45,7 +45,7 @@ export async function fetchAIResponse(question) {
  * @param {HTMLElement} chatSection - Секція чату куди додаємо відповідь
  * @param {string} html - HTML код для вставки
  */
-export function addAIResponse(chatSection, html) {
+export function addLLMResponse(chatSection, html) {
   // Вставляємо HTML в кінець секції чату
   chatSection.insertAdjacentHTML("beforeend", html);
 

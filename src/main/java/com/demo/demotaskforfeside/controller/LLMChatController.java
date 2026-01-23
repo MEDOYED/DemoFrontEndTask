@@ -46,7 +46,7 @@ public class LLMChatController {
          model.addAttribute("products", response.products());
 
          // Повертаємо тільки HTML фрагмент (не всю сторінку!)
-         return "fragments/llm-chat/llm-response-fragment :: aiResponse";
+         return "fragments/llm-chat/llm-response-fragment :: llmResponse";
      }
 
     private LLMChatResponse createDummyLLMChatResponse() {
