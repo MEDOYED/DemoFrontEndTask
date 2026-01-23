@@ -25,6 +25,7 @@
 }
 
 .llm-chat__user-message {
+  position: relative;
   background-color: var(--blue-surface-20) !important;
   margin-left: auto;
   max-width: 90%;
@@ -32,6 +33,20 @@
   flex-direction: column;
   gap: 10px;
   border-bottom-right-radius: 0px;
+  margin-right: 15px;
+}
+
+.llm-chat__user-message::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -17px;
+  height: 0;
+  border: 18px solid transparent;
+  border-left-color: var(--blue-surface-20);
+  border-right: 0;
+  border-bottom: 0;
+  margin-bottom: -1px;
 }
 
 .llm-chat__label {
