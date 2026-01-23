@@ -5,9 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchBackdropBlur = document.getElementById(
     "search-backdrop-blur",
   );
-  const searchInput = document.getElementById("message-input");
+  const chatMessageForm = document.getElementById(
+    "chat-message-form",
+  );
 
-  if (!aiChatContent || !searchBackdropBlur || !searchInput) {
+  if (!aiChatContent || !searchBackdropBlur || !chatMessageForm) {
     return;
   }
 
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     searchBackdropBlur.style.left = `${rect.left}px`;
 
-    searchInput.style.width = `${widthAiChatContent}px`;
+    chatMessageForm.style.width = `${widthAiChatContent}px`;
   };
 
   updateSearchWidth();

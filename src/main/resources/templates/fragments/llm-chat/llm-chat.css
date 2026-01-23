@@ -75,6 +75,10 @@
 .llm-chat__search-bar {
   position: fixed;
   bottom: calc(var(--mobile-bottombar-height) + 20px);
+  padding: 0px;
+
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 1200px) {
@@ -85,19 +89,17 @@
 
 .llm-chat__search-input {
   width: 100%;
-  position: relative;
+  padding: 10px;
 }
 
 .llm-chat__search-button {
-  position: absolute;
-  right: 6px;
-  top: 50%;
   border-radius: 10px;
-  transform: translateY(-50%);
   border: 1px solid var(--border);
   color: var(--brand-blue);
   padding: 5px;
   display: flex;
+  height: fit-content;
+  margin-right: 5px;
 }
 
 /* ===== llm-response-fragment.html  --- start  ===== */
