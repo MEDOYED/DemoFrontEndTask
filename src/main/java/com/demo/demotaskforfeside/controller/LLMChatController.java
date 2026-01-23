@@ -37,6 +37,14 @@ public class LLMChatController {
      public String chatHtml(@RequestBody LLMChatQuestionRequest request, Model model) {
          log.info("Отримано запит на /llm/chat/ask-html: {}", request.question());
 
+         // Імітуємо затримку обробки AI (3 секунди)
+         try {
+             Thread.sleep(3000);
+         } catch (InterruptedException e) {
+             Thread.currentThread().interrupt();
+             log.error("Затримку перервано", e);
+         }
+
          // Отримуємо відповідь (зараз мок, потім буде AI)
          LLMChatResponse response = createDummyLLMChatResponse();
 
