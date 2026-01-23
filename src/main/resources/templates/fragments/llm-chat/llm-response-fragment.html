@@ -7,36 +7,29 @@
   <!-- knowledgeSource (джерела знань) показуємо тільки якщо є -->
   <div
     th:if="${knowledgeSource != null and !knowledgeSource.isEmpty()}"
-    class="card llm-chat__knowledge-source-block"
   >
-    <p class="card-label llm-chat__response-label">
-      <img
-        class="llm-chat__response-icon"
-        src="/images/svg-icons/resource.svg"
-        alt="іконка ресурсів яка показує що різні ресурси збираються в одну відповідь"
-      />
-      Джерела:
-    </p>
-
-    <ul class="list">
-      <li
-        class="list__item"
-        th:each="source : ${knowledgeSource}"
-        th:text="${source}"
-      ></li>
-    </ul>
+    <h4 class="card-label">Джерела:</h4>
+    <div class="card llm-chat__knowledge-source-block">
+      <ul class="list">
+        <li
+          class="list__item"
+          th:each="source : ${knowledgeSource}"
+          th:text="${source}"
+        ></li>
+      </ul>
+    </div>
   </div>
 
   <!-- Відповіді AI (завжди виводимо), але перевірка всерівно є -->
-  <div
-    th:if="${answers != null  and !answers.isEmpty()}"
-    class="card llm-chat__answers-block"
-  >
-    <div th:each="answer : ${answers}">
-      <p
-        class="ai-chat__text-message"
-        th:text="${answer}"
-      ></p>
+  <div th:if="${answers != null  and !answers.isEmpty()}">
+    <h4 class="card-label">Відповідь:</h4>
+    <div class="card llm-chat__answers-block">
+      <ul th:each="answer : ${answers}">
+        <li
+          class="ai-chat__text-message"
+          th:text="${answer}"
+        ></li>
+      </ul>
     </div>
   </div>
 
@@ -51,7 +44,7 @@
         class="card list__item"
         th:each="product : ${products}"
       >
-        <strong th:text="${product.productName}"></strong>
+        <span th:text="${product.productName}"></span>
 
         <img
           class="image"
