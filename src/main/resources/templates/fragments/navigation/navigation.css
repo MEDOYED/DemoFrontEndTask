@@ -5,12 +5,12 @@
 
 .navigation__side-nav__sections {
   display: grid;
-  gap: 18px;
+  gap: 15px;
 }
 
 .navigation__side-nav__group {
   display: grid;
-  gap: 10px;
+  gap: 5px;
 }
 
 .navigation__side-nav__title {
@@ -20,7 +20,6 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   width: fit-content;
-  margin-top: 8px;
 }
 
 .navigation__side-nav__list {
@@ -81,8 +80,8 @@
 }
 
 .navigation__item-icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
   font-size: 15px;
