@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.Map.entry;
 
@@ -24,7 +27,18 @@ public class AccountsOverdueDebtsController {
     }
 
     @GetMapping(value = "/overdue-debts", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String overdueDebtsPage() {   
+    public String overdueDebtsPage(Model model) {
+        List<String> representatives = Stream.of(
+                "Іван Петренко",
+                "Марія Коваленко",
+                "Олег Сидоренко",
+                "Наталія Шевченко"
+        ).collect(Collectors.toList());
+
+
+        model.addAttribute("userRole", "OWNER");
+        model.addAttribute("representatives", representatives);
+
         return "pages/overdue-debts/overdue-debts";
     }
 

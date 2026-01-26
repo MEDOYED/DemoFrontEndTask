@@ -1,6 +1,6 @@
 <div
   class="general-one-s-report-page-content"
-  th:fragment="content(pageHeading, dataEndpoint, exportEndpoint, renderDatePicker, renderClientPicker, renderRepresentativesPicker, userRole)"
+  th:fragment="content(pageHeading, dataEndpoint, exportEndpoint, renderDatePicker, renderClientPicker, userRole, representatives)"
 >
   <link
     rel="stylesheet"
@@ -56,6 +56,20 @@
               />
             </div>
           </div>
+
+          <!-- renderRepresentativesPicker -->
+          <div
+            class="general-one-s-report-page-content__render-representatives-picker"
+          >
+            <div
+              th:replace="~{fragments/general-one-s-report-page-content/fragments/representatives-picker/representatives-picker :: representatives-picker(
+                userRole=${userRole}, 
+                representatives=${representatives}
+              )}"
+            ></div>
+          </div>
+
+          <!-- grid-column: 1 / -1; -->
 
           <!-- renderClientPicker -->
           <div
@@ -130,12 +144,6 @@
             </div>
           </div>
         </div>
-
-        <!-- renderRepresentativesPicker -->
-        <div
-          th:replace="~{fragments/general-one-s-report-page-content/fragments/representatives-picker/representatives-picker :: 
-          representatives-picker(${renderRepresentativesPicker}, ${userRole})}"
-        ></div>
 
         <!-- toolbar start -->
         <!-- toolbar start -->

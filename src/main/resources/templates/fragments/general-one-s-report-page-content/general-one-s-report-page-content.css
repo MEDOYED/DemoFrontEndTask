@@ -560,3 +560,13 @@
   display: block;
   background: transparent;
 }
+
+/* representatives */
+
+.general-one-s-report-page-content__render-representatives-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  grid-column: 1 / -1;
+  color: var(--brand-dark);
+}

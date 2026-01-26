@@ -3,22 +3,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <body>
     <div
-      th:fragment="representatives-picker(renderRepresentativesPicker, userRole)"
+      th:fragment="representatives-picker(userRole, representatives)"
     >
       <link
         rel="stylesheet"
-        th:href="@{/fragments/general-one-s-report-page-content/ui/representatives-picker/representatives-picker.css}"
+        th:href="@{/fragments/general-one-s-report-page-content/fragments/representatives-picker/representatives-picker.css}"
       />
 
       <!-- renderRepresentativesPicker -->
       <div
         id="adminView"
-        th:if="${renderRepresentativesPicker}"
+        th:if="${representatives}"
       >
         <div
           id="representativesFilter"
           class="representatives-picker__filter"
-          style="display: none"
         >
           <h3 class="label">Представники</h3>
           <details class="representatives-picker__dropdown">
@@ -35,7 +34,21 @@
               <div
                 id="representativesOptions"
                 class="representatives-picker__options"
-              ></div>
+              >
+                <label
+                  th:each="representative, iterStat : ${representatives}"
+                  th:for="${'representative-' + iterStat.index}"
+                  class="representatives-option"
+                >
+                  <input
+                    type="checkbox"
+                    th:id="${'representative-' + iterStat.index}"
+                    th:value="${representative}"
+                    checked
+                  />
+                  <span th:text="${representative}"></span>
+                </label>
+              </div>
 
               <div class="representatives-picker__actions">
                 <button
@@ -56,18 +69,6 @@
               </div>
             </div>
           </details>
-          <!-- <div
-          class="representatives-actions representatives-fetch"
-        >
-          <button
-            type="button"
-            class="btn primary"
-            id="representativesFetchReport"
-            disabled
-          >
-            Отримати звіт
-          </button>
-        </div> -->
         </div>
         <div
           id="adminTableContainer"
@@ -81,7 +82,10 @@
         ></div>
       </div>
 
-      <script src="/fragments/general-one-s-report-page-content/ui/representatives-picker/representatives-picker.js"></script>
+      <script
+        type="module"
+        th:src="@{/fragments/general-one-s-report-page-content/fragments/representatives-picker/representatives-picker.js(v=${appVersion})}"
+      ></script>
     </div>
   </body>
 </html>

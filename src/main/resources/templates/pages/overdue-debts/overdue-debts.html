@@ -10,7 +10,6 @@
       exportEndpoint='/overdue-debts/export',
       renderDatePicker=true,
       renderClientPicker=true,
-      renderRepresentativesPicker=true,
       activeNav='accounts-overdue-debts',
       userRole=${userRole}
     "
@@ -32,8 +31,21 @@
 
   <body>
     <div
-      th:replace="~{/fragments/responsive-layout/responsive-layout :: responsive-layout(content=~{fragments/general-one-s-report-page-content/general-one-s-report-page-content :: content(${pageHeading}, ${dataEndpoint}, ${exportEndpoint}, ${renderDatePicker}, ${renderClientPicker}, ${renderRepresentativesPicker}, ${userRole})}, activePage='overdue-debts')}"
-    ></div>
+      th:replace="~{/fragments/responsive-layout/responsive-layout :: responsive-layout(content=~{::.responsive__content-wrapper} , activePage='overdue-debts')}"
+    >
+      <div class="responsive__content-wrapper">
+        <div
+          th:replace="~{fragments/general-one-s-report-page-content/general-one-s-report-page-content :: content(
+            pageHeading=${pageHeading}, 
+            dataEndpoint=${dataEndpoint}, 
+            exportEndpoint=${exportEndpoint}, 
+            renderDatePicker=${renderDatePicker}, 
+            renderClientPicker=${renderClientPicker},
+            userRole=${userRole}, 
+            representatives=${representatives})}"
+        ></div>
+      </div>
+    </div>
 
     <script th:src="@{/js/app.js(v=${appVersion})}"></script>
   </body>
