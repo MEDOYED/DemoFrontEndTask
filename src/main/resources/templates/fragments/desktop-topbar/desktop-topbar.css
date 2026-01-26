@@ -16,6 +16,15 @@
 
 .desktop-topbar__logo {
   height: 40px;
+  display: flex;
+  align-items: center;
+  background: var(--brand-white);
+  border-radius: 11px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .desktop__userinfo {
